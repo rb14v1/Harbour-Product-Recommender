@@ -12,7 +12,12 @@ RUN apt-get update \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+RUN groupadd --system --gid 10001 app \
+    && useradd --system --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+
+COPY --chown=app:app . .
+
+USER app
 
 EXPOSE 8000
 
