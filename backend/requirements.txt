@@ -1,7 +1,8 @@
-# Security: Django and DRF are pinned to exact patched versions containing the fixes
-# for CVE-2026-15307, -25673, -33034, -3902 (Django) and CVE-2026-114136/7/8 (DRF).
-Django==5.2.11
-djangorestframework==3.16.1
+# Security: Trivy flagged Django 5.2.11 (CVE-2026-15307, -25673, -33034, -3902) and
+# DRF 3.16.1 (CVE-2026-114136/7/8). Django tracks the latest 5.2 LTS security patch;
+# DRF is pinned to 3.18.2, the first release fixing the DRF CVEs.
+Django>=5.2.12,<5.3
+djangorestframework==3.18.2
 # 5.5.1 contains the fix for CVE-2024-22513
 djangorestframework-simplejwt==5.5.1
 psycopg2-binary==2.9.9
