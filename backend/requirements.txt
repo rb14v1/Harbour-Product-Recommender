@@ -1,8 +1,7 @@
-# Security: Django and DRF are allowed to float to the newest patch release so that
-# installs pick up fixes for CVE-2026-15307, -25673, -33034, -3902 (Django) and
-# CVE-2026-114136/7/8 (DRF). Pin these to the exact patched versions once confirmed.
-Django>=5.2.11,<5.3
-djangorestframework>=3.16.1,<3.17
+# Security: Django and DRF are pinned to exact patched versions containing the fixes
+# for CVE-2026-15307, -25673, -33034, -3902 (Django) and CVE-2026-114136/7/8 (DRF).
+Django==5.2.11
+djangorestframework==3.16.1
 # 5.5.1 contains the fix for CVE-2024-22513
 djangorestframework-simplejwt==5.5.1
 psycopg2-binary==2.9.9
