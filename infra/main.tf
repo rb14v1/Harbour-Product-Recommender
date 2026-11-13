@@ -49,7 +49,7 @@ resource "azurerm_postgresql_flexible_server" "postgresql" {
 resource "azurerm_postgresql_flexible_server_configuration" "azure_extensions" {
   name      = "azure.extensions"
   server_id = azurerm_postgresql_flexible_server.postgresql.id
-  value     = "CONCEPT,VECTOR"
+  value     = "VECTOR"
 }
 
 resource "random_password" "postgresql_admin" {
